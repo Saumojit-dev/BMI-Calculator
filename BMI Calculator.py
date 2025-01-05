@@ -1,16 +1,5 @@
 import streamlit as st
 
-def Rate_yourself():
-    with st.sidebar:
-        st.title('Rate Yourself')
-        languages = st.text_input('Enter the programming languages you with comma separation', value = 'Python')
-        languages = [i.strip() for i in languages.split(',')]
-    st.subheader('How would you rate your experience in the following programming languages & tools')
-    for language in languages:
-        st.write(language)
-        st.slider(language,min_value = 0., max_value = 10., step = .5)
-
-
 def BMI_Calculator():
     st.title('BMI Calculator')
     with st.form('BMI Calculator'):
@@ -41,9 +30,8 @@ def BMI_Calculator():
             st.error(BMI)
 
 
-choice = st.sidebar.selectbox('Menu',['BMI', 'Rate_Yourself'])
+choice = st.sidebar.selectbox('Menu',['BMI'])
 
 if choice == 'BMI':
     BMI_Calculator()
-elif choice == 'Rate Yourself':
-    Rate_yourself()
+
